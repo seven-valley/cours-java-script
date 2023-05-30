@@ -1,0 +1,35 @@
+<table>
+    <thead>
+      <tr>
+        <td>Prénom</td>
+        <td>nom</td>
+      </tr>
+    </thead>
+    <tbody id="myTbody">
+      <!-- existing data could optionally be included here -->
+    </tbody>
+  </table>
+  <button id="btnAjouter">Ajouter</button>
+  <template id="myTr">
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </template>
+  <script>
+    document.getElementById('btnAjouter').onclick =()=>{
+        
+        // selecteur sur le tableau
+        const tbody = document.getElementById("myTbody");
+        // selecteur sur le template
+        const template = document.getElementById('myTr');
+        // cloner le template
+        const clone = template.content.cloneNode(true);
+        // querySelectorAll retourne 1 tableau
+        let td = clone.querySelectorAll("td");
+            td[0].textContent = "Brad";
+            td[1].textContent = "PITT";
+        // ajouter le tr cloner ds le tableau html
+        tbody.appendChild(clone);    
+    }
+  </script>

@@ -1,0 +1,4 @@
+Objectif:
+Créer une balise <tr> avec la méthode template de javascript
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template
