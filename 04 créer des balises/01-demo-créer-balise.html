@@ -1,0 +1,12 @@
+<div id="demo"></div>
+<button id="btnGo">GO</button>
+<script>
+document.getElementById('btnGo').onclick = () =>{
+    // créer une balise <p></p>
+    let p = document.createElement('p'); //<p></p> 
+    p.innerHTML = 'Brad PITT';  //<p>Brad PITT</p>
+    // ajouter une balise dans une autre
+    document.getElementById('demo').appendChild(p);
+    console.log("abc");
+}
+</script>

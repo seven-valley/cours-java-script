@@ -1,0 +1,8 @@
+Etape 1 : ajouter un fruit dans le tableau html
+	- créer une balise tr
+	- créer 2 balises td
+	-créer 1 balise button
+
+Etape 2 : supprimer la ligne
+
+Etape 3 : la fonction confirm

@@ -1,0 +1,24 @@
+<div id="demo">
+    <!-- <p>Brad PITTT <button class="btnEnlever">Enlever</button></p> -->
+</div>
+<button id="btnAjouter">ajouter</button>
+<script>
+  document.getElementById("btnAjouter").onclick = () => {
+    let p = document.createElement("p"); //<p></p>
+    p.innerHTML = "Brad PITT"; //<p>Brad PITT</p>
+    let btn =document.createElement("button"); //<button></button>
+    btn.innerHTML ='Enlever'; //<button>Enlever</button>
+    p.appendChild(btn);
+    btn.onclick =(evt) =>{
+        console.log('enlever');
+        // selecteur.remove();
+        // le this : selecteur sur l'element cliquer
+
+        evt.target.parentElement.remove();
+    }
+    //<p>Brad PITT <button id="btnEnlever">Enlever</button></p>
+    // ajouter une balise dans une autre
+    document.getElementById("demo").appendChild(p);
+  };
+
+</script>
