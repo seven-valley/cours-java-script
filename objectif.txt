@@ -1,0 +1,7 @@
+Etape 1
+ <h2 class="card-title h4">TP 3 Liste de fruis</h2>
+                <p class="card-text">
+                 Ajouter une ligne avec un fruit dans un tableau.<br>
+                 Enlever cette ligne du tableau
+
+                </p>

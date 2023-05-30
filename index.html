@@ -91,7 +91,7 @@
                   class="card-img-top img-fluid"
                   src="dist/img/jour-1/imc.webp"
                 />
-                <h2 class="card-title">TP 1 Calculer votre IMC</h2>
+                <h2 class="card-title h4">TP 1 Calculer votre IMC</h2>
                 <p class="card-text">
                   En fonction de votre pois de Kg et votre taille en mètre,
                   calculer votre IMC (<b>I</b>ndice de <b>M</b>asse
@@ -111,7 +111,7 @@
                     </button>
                   </div>
                   <div class="col-6">
-                    <a class="btn btn btn-outline-dark btn-sm" href="#!">
+                    <a target="_blank" class="btn btn btn-outline-dark btn-sm" href="https://github.com/seven-valley/cours-java-script/blob/master/01-tp-01-calculer-imc/maquette.html">
                       <i class="fa-brands fa-github"></i>
                       Maquette</a
                     >
@@ -129,33 +129,72 @@
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
-          <div class="col-md-4 mb-5">
+
+         
+          <div class="col-md-3 mb-5">
             <div class="card h-100">
               <div class="card-body">
-                <h2 class="card-title">Card One</h2>
+                <img
+                  class="card-img-top img-fluid"
+                  src="dist/img/jour-1/imc-v2.webp"
+                />
+                <h2 class="card-title h4">TP 2 Ajouter des règles CSS</h2>
                 <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem
-                  magni quas ex numquam, maxime minus quam molestias corporis
-                  quod, ea minima accusamus.
+                 Afficher le résultat uniquement lorsque l'onclique sur  le bouton.
+                 Changer la couleur du background "alert" du résultat
                 </p>
+                
               </div>
               <div class="card-footer">
-                <a class="btn btn-primary btn-sm" href="#!">More Info</a>
+                <div class="row">
+                  <div class="col-6">
+                    <button
+                      class="btn btn-outline-primary btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#tp2"
+                    >
+                      Objectif
+                    </button>
+                  </div>
+                  <div class="col-6">
+                    <a target="_blank" class="btn btn btn-outline-dark btn-sm" href="https://github.com/seven-valley/cours-java-script/blob/master/01-tp-01-calculer-imc/maquette.html">
+                      <i class="fa-brands fa-github"></i>
+                      Maquette</a
+                    >
+                  </div>
+             
+                  <div class="col-12 mt-2">
+                    <a
+                      target="_blank"
+                      class="btn btn-outline-success btn-sm"
+                      href="01-tp-01-calculer-imc/tp1-imc.html"
+                    >
+                      <i class="fa-solid fa-eye"></i>
+                      Live preview</a
+                    >
+                 
+                </div>
               </div>
+
             </div>
           </div>
+
+
+          
+
         </div>
       </div>
     </section>
 
-    <!-- Modal -->
+    <!-- Modal tp 1-->
     <div
       class="modal fade"
       id="tp1"
       tabindex="-1"
-      aria-labelledby="exampleModalLabel"
+     
       aria-hidden="true"
     >
       <div class="modal-dialog">
@@ -189,6 +228,55 @@
             <b>Etape 3</b> : Afficher les tranche<br> 
             <b>Etape 4</b> : Afficher le
             nombre de kilo à perdre
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <!-- Modal tp 1-->
+    <div
+      class="modal fade"
+      id="tp2"
+      tabindex="-1"
+      
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              TP 2 : Ajouter du CSS au TP 1
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <b>Etape 1 : </b><br>
+            changer la couleur de la div "alert"<br>
+            jaune si maigreure <br>
+            vert : normal <br>
+            jaune : surpoids<br>
+            rouge : obesite<br>
+            noir : obesite severe<br>
+            noir : obesite massive<br>
+            <hr>
+            <b>Etape 2 : </b> <br>
+            cacher la div "alert"
+            avant d'afficher le resultat
+
           </div>
 
           <div class="modal-footer">
