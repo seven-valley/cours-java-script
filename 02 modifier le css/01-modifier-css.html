@@ -1,12 +1,29 @@
 <style>
     .rouge{color:tomato ;}
+    .cacher{display:none;}
 </style>
 <!-- <div class="rouge" style="color:blue">test</div> -->
-<h1 id="titre1">test</div>
+<h1 id="titre1" class="cacher">test</h1>
 <button id="btnGo"> GO</button>
+<button id="btnGo2"> GO 2</button>
+<button id="btnGo3">Afficher</button>
+<button id="btnGo4">Go green</button>
 <script>
     document.getElementById('btnGo').onclick= function(){
         // toggle
         document.getElementById('titre1').classList.toggle('rouge');
     }
+    // function go2 (){}
+// const go2 = () =>{
+
+// }
+document.getElementById('btnGo2').onclick = () =>{
+    document.getElementById('titre1').classList.toggle('cacher');
+}
+document.getElementById('btnGo3').onclick = () =>{
+    document.getElementById('titre1').classList.remove('cacher');
+}
+document.getElementById('btnGo4').onclick = () =>{
+    document.getElementById('titre1').style.color = 'blue';
+}
 </script>    
