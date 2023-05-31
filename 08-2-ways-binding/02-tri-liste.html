@@ -1,0 +1,25 @@
+<input id="nom">
+<ul id="liste">
+    <li>John Doe</li>
+    <li>John Cache</li>
+    <li>Brad PITT</li>
+    <li>Tom CRUISE</li>
+</ul>
+<script>
+    document.getElementById('nom').onkeyup =()=>{
+        let nom = document.getElementById('nom').value;
+        nom = nom.toUpperCase();
+        let tableau = document.querySelectorAll('#liste>li');
+        for (let li of tableau){
+            // John DOE <-> jo
+            if (li.innerHTML.toUpperCase().indexOf(nom) >- 1){
+                // on affiche
+                li.style.display = "";
+            }else{
+                // on cache
+                li.style.display = "none";
+            }
+
+        }
+    }
+</script>

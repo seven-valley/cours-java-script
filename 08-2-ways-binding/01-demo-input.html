@@ -1,0 +1,12 @@
+<!-- <input id="titre" onkeyup="affiche()"> -->
+<input id="titre">
+<h1 id="demo"></h1>
+<script>
+// const affiche =()=>{
+
+// }
+document.getElementById('titre').onkeyup =()=>{
+    let titre = document.getElementById('titre').value;
+    document.getElementById('demo').innerHTML = titre.toUpperCase();
+}
+</script>
