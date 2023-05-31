@@ -19,6 +19,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- <link rel="stylesheet" href="./highlight/styles/monokai-sublime.min.css" /> -->
+    <link href="./prism/prism.min.css" rel="stylesheet" />
     <title>Travaux partiques JavaScript</title>
     <style>
       .bg-photo {
@@ -29,6 +31,9 @@
       }
       .bg-gris {
         background-color: #eee;
+      }
+      code{
+        font-size: 1.6em!important;
       }
     </style>
   </head>
@@ -78,9 +83,25 @@
       </div>
     </header>
     <section class="bg-gris">
-      <div class="container px-4">
+      <div class="container p-4">
         <h1>Le cours</h1>
+       
       </div>
     </section>
+    <section>
+      <div class="container px-4">
+    <div class="col-10">
+      <pre>
+<code class="language-html">&lt;div id=&quot;demo&quot;&gt;hello&lt;/div&gt;  
+&lt;script&gt; 
+  // lecture d'une balise 
+  let info = document.getElementById('demo').innerHTML; 
+&lt;/script&gt;</code>
+    </pre>
+    </div>
+       
+</section>
+    <!-- <script src="./highlight/highlight.min.js"></script> -->
+    <script src="./prism/prism.min.js"></script>
   </body>
 </html>

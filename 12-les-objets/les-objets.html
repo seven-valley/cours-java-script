@@ -1,0 +1,43 @@
+<script>
+    // on the fly
+    let personne1 ={};
+    personne1.prenom ='Brad';
+    personne1.nom = 'PITT';
+    console.log(personne1);
+    let personne2 ={prenom:'Bruce',nom:'Willis'};
+    let personne3 ={"prenom":"Tom","nom":"CRUISE"}; // facon JSON
+    // contenu fichier JSON : {"prenom":"Tom","nom":"CRUISE"}
+    let personnes = [];
+    personnes.push(personne1);
+    personnes.push(personne2);
+    personnes.push(personne3);
+   
+    //--------------------
+    class Personne {
+        // prenom
+        // nom
+        constructor(prenom,nom){
+            this.prenom=prenom;
+            this.nom =nom;
+        }
+    }
+    //--------------------
+    let personne4 = new Personne('Nicolas','CAGE');
+    let personne5 = new Personne('Angelina','JOLIE');
+    personnes.push(personne4); 
+    personnes.push(personne5); 
+ //--------------------
+    for (let p of personnes){
+        console.log(p.prenom +' '+p.nom);
+    }
+//--------------------
+// un objet c'est aussi un tableau
+console.log(personne4['prenom']);
+console.log(personne4['nom']);
+//--------------------
+for (let attribut in personne4){
+    console.log(attribut);
+    console.log(personne4[attribut]);
+}
+//--------------------
+</script>
