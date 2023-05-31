@@ -32,8 +32,12 @@
       .bg-gris {
         background-color: #eee;
       }
-      code{
-        font-size: 1.6em!important;
+      code {
+        font-size: 1.6em !important;
+      }
+      .ml-n20{
+        margin-top:20px;
+        margin-left:-126px;
       }
     </style>
   </head>
@@ -85,23 +89,38 @@
     <section class="bg-gris">
       <div class="container p-4">
         <h1>Le cours</h1>
-       
       </div>
     </section>
     <section>
       <div class="container px-4">
-    <div class="col-10">
-      <pre>
+        <div class="row">
+          <div class="col-10">
+            <pre>
 <code class="language-html">&lt;div id=&quot;demo&quot;&gt;hello&lt;/div&gt;  
 &lt;script&gt; 
   // lecture d'une balise 
   let info = document.getElementById('demo').innerHTML; 
 &lt;/script&gt;</code>
     </pre>
-    </div>
-       
-</section>
+          </div>
+
+          <div class="col-2">
+            <button class="ml-n20 btn btn-outline-secondary myCopy">
+              <i class="fa-solid fa-copy"></i> copier
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- <script src="./highlight/highlight.min.js"></script> -->
     <script src="./prism/prism.min.js"></script>
+    <script>
+      let tabBtn = document.querySelectorAll(".myCopy");
+      tabBtn.forEach(btn=>{
+        btn.onclick =() =>{ 
+          console.log('abc');
+        };
+      });
+    </script>
   </body>
 </html>
