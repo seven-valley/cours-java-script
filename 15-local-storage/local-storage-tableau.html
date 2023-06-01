@@ -1,0 +1,13 @@
+<script>
+    let fruits =['pomme','poire','cerise'];
+    
+    localStorage.setItem('toto',JSON.stringify(fruits));
+   
+    if (localStorage.getItem('toto') != null){
+        let couleur = JSON.parse(localStorage.getItem('toto'));
+        console.log(couleur);
+    }else{
+        console.log('rien');
+    }
+    
+</script>

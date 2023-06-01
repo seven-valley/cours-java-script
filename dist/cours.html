@@ -35,20 +35,16 @@
       code {
         font-size: 1.6em !important;
       }
-      .ml-n20{
-        margin-top:24px;
-        margin-left:-130px;
+      .ml-n20 {
+        margin-top: 24px;
+        margin-left: -130px;
         /* margin-top:20px;
         margin-left:-126px; */
       }
-      .custom-popover {
-  /* --bs-popover-max-width: 200px; */
-  --bs-popover-border-color: var(--bs-success);
-  /* --bs-popover-header-bg: var(--bs-primary); */
-  /* --bs-popover-header-color: var(--bs-success); */
-  --bs-popover-body-padding-x: 1rem;
-  --bs-popover-body-padding-y: .5rem;
-}
+      .my-blue{color:#07a;}
+      .custom-tooltip {
+        --bs-tooltip-bg: var(--bs-success);
+      }
     </style>
   </head>
   <body>
@@ -102,30 +98,159 @@
       </div>
     </section>
     <section>
-      <div class="container px-4">
+      <div class="container px-4 pt-3">
+        <!-- bloque -->
+        <h2>Ecrire dans une balise</h2>
+        Le sélecteur avec l'attribut innerHTML permet d'écrire dans une balise
         <div class="row">
           <div class="col-10">
-           
             <pre>
 <code class="language-html">&lt;div id=&quot;demo&quot;&gt;hello&lt;/div&gt;  
 &lt;script&gt; 
-  // lecture d'une balise 
-  let info = document.getElementById('demo').innerHTML; 
+  document.getElementById('demo').innerHTML='bonjour'; 
 &lt;/script&gt;</code>
     </pre>
-    
           </div>
 
           <div class="col-2">
-            <button class="ml-n20 btn btn-outline-secondary myCopy"
-            class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Copie ok !"
-         
-            data-bs-custom-class="custom-popover"
+            <button
+              class="ml-n20 btn btn-outline-secondary myCopy"
+              class="btn btn-secondary"
+              data-bs-toggle="tooltip"
+              data-bs-trigger="click"
+              data-bs-placement="top"
+              title="Copie ok !"
+              id="myTooltip"
             >
               <i class="fa-solid fa-copy"></i> copier
-            </button> 
+            </button>
           </div>
         </div>
+        <i class="my-blue ms-5 fa-solid fa-arrow-down fa-2xl"></i>
+        <div class="col-10">
+          <pre>
+<code class="language-html">&lt;div id=&quot;demo&quot;&gt;bonjour&lt;/div&gt;</code></pre>
+<hr class="mt-5">        
+</div>
+
+        <!-- bloque -->
+        <!-- bloque -->
+        <h2 class="mt-5">Lire le contenu d'une balise</h2>
+        Le sélecteur avec l'attribut innerHTML permet d'écrire dans une balise
+        <div class="row">
+          <div class="col-10">
+            <pre>
+<code class="language-html">&lt;div id=&quot;demo&quot;&gt;hello&lt;/div&gt;  
+&lt;script&gt; 
+  let info = document.getElementById('demo').innerHTML;
+  console.log(info); 
+&lt;/script&gt;</code>
+    </pre>
+          </div>
+
+          <div class="col-2">
+            <button
+              class="ml-n20 btn btn-outline-secondary myCopy"
+              class="btn btn-secondary"
+              data-bs-toggle="tooltip"
+              data-bs-trigger="click"
+              data-bs-placement="top"
+              title="Copie ok !"
+              id="myTooltip"
+            >
+              <i class="fa-solid fa-copy"></i> copier
+            </button>
+          
+          </div>  
+        </div>
+        <div class="col-10">
+          <hr class="mt-5"> 
+        </div>
+        <!-- bloque -->
+        <!-- bloque -->
+        <h2 class="mt-5">Le trigger</h2>
+       Le bouton permet de demander un traitement
+        <div class="row">
+          <div class="col-10">
+            <pre>
+<code class="language-html">&lt;div onclick=&quot;afficher()&quot;&gt;GO&lt;/div&gt;  
+&lt;script&gt; 
+  function afficher(){
+    console.log('abc');
+  }
+&lt;/script&gt;</code>
+    </pre>
+          </div>
+
+          <div class="col-2">
+            <button
+              class="ml-n20 btn btn-outline-secondary myCopy"
+              class="btn btn-secondary"
+              data-bs-toggle="tooltip"
+              data-bs-trigger="click"
+              data-bs-placement="top"
+              title="Copie ok !"
+              id="myTooltip"
+            >
+              <i class="fa-solid fa-copy"></i> copier
+            </button>
+          
+          </div>  
+        </div>
+        <div class="col-10">
+          <hr class="mt-5"> 
+        </div>
+        <!-- bloque -->
+       La fonction <strong>alert</strong> n'est pas recommandée.<br>
+       En effet il est possible  d'oublier de l'enlever lors de la mise en production.<br>
+       De plus l'action est bloquante. 
+        <div class="row">
+          <div class="col-10">
+            <pre>
+<code class="language-html">&lt;div onclick=&quot;afficher()&quot;&gt;GO&lt;/div&gt;  
+&lt;script&gt; 
+  function afficher(){
+    alert('abc');
+  }
+&lt;/script&gt;</code>
+    </pre>
+          </div>
+
+          <div class="col-2">
+            <button
+              class="ml-n20 btn btn-outline-secondary myCopy"
+              class="btn btn-secondary"
+              data-bs-toggle="tooltip"
+              data-bs-trigger="click"
+              data-bs-placement="top"
+              title="Copie ok !"
+              id="myTooltip"
+            >
+              <i class="fa-solid fa-copy"></i> copier
+            </button>
+          
+          </div>  
+        </div>
+        <div class="col-10">
+          <hr class="mt-5"> 
+        </div>
+        <!-- bloque -->
+        <!-- bloque -->
+        <h2 class="mt-5">Le Champ de saisie</h2>
+       Le champ <strong>input</strong> permet de d'écrire des chaîne de caractère
+        <div class="row">
+          <div class="col-10">
+            <pre>
+<code class="language-html">&lt;input id=&quot;info&quot;&gt;</code>
+    </pre>
+          </div>
+
+          
+        </div>
+        <div class="col-10">
+          <hr class="mt-5"> 
+        </div>
+        <!-- bloque -->
       </div>
     </section>
     <!-- <script src="./highlight/highlight.min.js"></script> -->
@@ -135,14 +260,29 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
-   <script>
-    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    <script>
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+      );
+      const tooltipList = [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+      );
+
       let tabBtn = document.querySelectorAll(".myCopy");
-      tabBtn.forEach(btn=>{
-        btn.onclick =() =>{ 
-          console.log('abc');
-          navigator.clipboard.writeText(document.querySelector('code').innerText);
+      tabBtn.forEach((btn) => {
+        // let tooltip = bootstrap.Tooltip.getOrCreateInstance(btn)
+
+        btn.addEventListener("show.bs.tooltip", (evt) => {
+          setTimeout(() => {
+            bootstrap.Tooltip.getOrCreateInstance(btn).hide();
+          }, "1000");
+        });
+        btn.onclick = (evt) => {
+          let div = evt.target.closest(".row");
+          const btn = div.querySelector("button");
+          let info = div.querySelector("code").innerText;
+          console.log(info);
+          navigator.clipboard.writeText(info);
         };
       });
     </script>

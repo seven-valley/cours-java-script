@@ -1,0 +1,20 @@
+<script>
+    //localStorage.couleur='rouge';
+   /*
+    if (localStorage.couleur != undefined){
+        let couleur = localStorage.couleur;
+        console.log(couleur);
+    }else{
+        console.log('rien');
+    }
+    */
+    localStorage.setItem('toto','rouge');
+   
+    if (localStorage.getItem('toto') != null){
+        let couleur = localStorage.getItem('toto');
+        console.log(couleur);
+    }else{
+        console.log('rien');
+    }
+    
+</script>

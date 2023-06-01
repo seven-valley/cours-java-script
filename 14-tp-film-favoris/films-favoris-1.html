@@ -39,10 +39,12 @@
                 type="text"
                 class="form-control"
                 placeholder="Nom de la série"
+                id="film"
+                value="star"
               />
             </div>
             <div class="col-2">
-              <button class="btn btn-success">
+              <button class="btn btn-success" id="btnSearch">
                
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
@@ -57,23 +59,8 @@
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Star Wars</td>
-                <td>2020</td>
-                <td>
-                  <img
-                    src="https://m.media-amazon.com/images/M/MV5BYjc5OWU5NzktNTU5MS00NzhiLWE5ZGEtOTIyMjJkOGEwMzQwXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg"
-                    alt="Star Wars"
-                    width="80"
-                  />
-                </td>
-                <td class="align-middle">
-                  <button class="btn btn-outline-secondary">
-                    <i class="fa fa-plus"></i>
-                  </button>
-                </td>
-              </tr>
+            <tbody id="myTbody">
+              
             </tbody>
           </table>
         </div>
@@ -85,67 +72,17 @@
                 <th>Séries</th>
                 <th>Année</th>
                 <th>Image</th>
-                <th>rating</th>
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>Foundation</td>
-                <td>24 Sep 2021</td>
-                <td>7.4</td>
-                <td>
-                  <img
-                    src="https://m.media-amazon.com/images/M/MV5BMTE5MDY1MGUtMmMxNi00YjA3LWIyZTYtN2FhOWJmNTY2NmM4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg"
-                    alt="Star Wars"
-                    width="80"
-                  />
-                </td>
-                <td class="align-middle">
-                  <button class="btn btn-outline-danger">
-                    <i class="fa fa-trash"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>The Expanse</td>
-                <td>23 Nov 2015</td>
-                <td>8.5</td>
-                <td>
-                  <img
-                    src="https://m.media-amazon.com/images/M/MV5BZDVmMDljM2QtZDkzZC00ZDg2LWFiMGItZjNiNjliZjg2MGEzXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg"
-                    alt="Star Wars"
-                    width="80"
-                  />
-                </td>
-                <td class="align-middle">
-                  <button class="btn btn-outline-danger">
-                    <i class="fa fa-trash"></i>
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td>Raised by Wolves</td>
-                <td>03 Sep 2020</td>
-                <td>7.5</td>
-                <td>
-                  <img
-                    src="https://m.media-amazon.com/images/M/MV5BNTRlMTg4NWYtZmRiNS00YWE0LWFkZTMtNjk5Yzc3NGE0ZTE0XkEyXkFqcGdeQXVyMzY0MTE3NzU@._V1_SX300.jpg"
-                    alt="Raised by Wolves"
-                    width="80"
-                  />
-                </td>
-                <td class="align-middle">
-                  <button class="btn btn-outline-danger">
-                    <i class="fa fa-trash"></i>
-                  </button>
-                </td>
-              </tr>
+            <tbody id="myTbody2">
+              
             </tbody>
           </table>
         </div>
       </div>
     </div>
+
     <footer class="py-5 bg-dark">
       <div class="container px-4 px-lg-5">
         <p class="m-0 text-center text-white">
@@ -153,5 +90,100 @@
         </p>
       </div>
     </footer>
+    <template id="templateTr">
+      <tr>
+        <td></td>
+        <td></td>
+        <td>
+          <img
+           
+            width="80"
+          />
+        </td>
+        <td class="align-middle">
+          <button class="btn btn-outline-secondary">
+            <i class="fa fa-plus"></i>
+          </button>
+        </td>
+      </tr>
+
+    </template>
+    <template id="templateTr2">
+      <tr>
+        <td></td>
+        <td></td>
+        <td>
+          <img
+           
+            width="80"
+          />
+        </td>
+        <td class="align-middle">
+          <button class="btn btn-outline-danger">
+            <i class="fa fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+
+    </template>
+    <script>
+      const afficherFav=()=>{
+        const tbody2 = document.getElementById("myTbody2");
+        tbody2.innerHTML='';
+        let i=0;
+        for (let f of tabFav){
+          const template = document.getElementById("templateTr2");
+          const clone = template.content.cloneNode(true);
+          let td = clone.querySelectorAll("td");
+          td[0].innerHTML = f.Title;
+          td[1].innerHTML = f.Year;
+          clone.querySelector("img").src=f.Poster;
+          clone.querySelector("img").alt=f.Title;
+          clone.querySelector("button").setAttribute('data-indice',i)
+          clone.querySelector("button").onclick=(evt)=>{
+            let i= evt.target.dataset.indice;
+            tabFav.splice(i,1)
+            afficherFav();
+            evt.target.closest('tr').remove();
+          }
+          tbody2.append(clone);
+          i++;
+        }
+      }
+      let films =[];
+      let tabFav=[];
+      document.getElementById('btnSearch').onclick= async()=>{
+       
+        const tbody = document.getElementById("myTbody");
+        tbody.innerHTML='';
+        let film = document.getElementById('film').value;
+        document.getElementById('film').value='';
+        let key = 'efdc2275';
+       let url ='http://www.omdbapi.com/?apikey='+key+'&s='+film
+       const response = await fetch(url);
+       const data = await response.json();
+       let i=0;
+       films=data.Search;
+        for (let f of data.Search){
+          const template = document.getElementById("templateTr");
+          const clone = template.content.cloneNode(true);
+          let td = clone.querySelectorAll("td");
+          td[0].innerHTML = f.Title;
+          td[1].innerHTML = f.Year;
+          clone.querySelector("img").src=f.Poster;
+          clone.querySelector("img").alt=f.Title;
+          clone.querySelector("button").setAttribute('data-indice',i)
+          clone.querySelector("button").onclick=(evt)=>{
+            console.log(evt.target)
+            let i= evt.target.closest('td').querySelector('button').dataset.indice;
+            tabFav.push(films[i]);
+            afficherFav();
+            evt.target.closest('tr').remove();
+          }
+          tbody.append(clone);
+          i++;
+        }
+      }
+    </script>
   </body>
 </html>
