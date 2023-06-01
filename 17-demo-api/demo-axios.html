@@ -1,0 +1,47 @@
+<button id="btnSave">GO</button>
+<button id="btnLire">LIRE</button>
+<button id="btnModifier">Modifier</button>
+<button id="btnEnlever">Enlever</button>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+     let url =
+      "https://eni-demo-nantes-default-rtdb.europe-west1.firebasedatabase.app/";
+    let url2 = url + "personnes.json";
+  let p = { prenom: "Jean", nom: "DUJARDIN" };
+  //const axios = require("axios");
+  document.getElementById("btnSave").onclick = async () => {
+   
+    axios.post(url2, p).then(function (response) {
+      console.log(response.data);
+    });
+  };
+  document.getElementById("btnLire").onclick = async () => {
+    axios.get(url2).then(function (response) {
+      console.log(response.data);
+      let personnes =response.data;
+      for (let attribut in personnes){
+        console.log(attribut);
+        console.log(personnes[attribut]);
+      }
+    });
+  };
+  document.getElementById("btnModifier").onclick = async () => {
+    let p = {prenom:'John',nom:'DUPONT'};
+    let id = '-NWrNY2SQhQHTjNRzH0a';
+    // personnes/id/.json
+    let url3 = url+'personnes/'+id+'/.json';
+    axios.put(url3,p).then(function (response) {
+      console.log(response.data);
+      
+    });
+};
+    document.getElementById("btnEnlever").onclick = async () => {
+    let id = '-NWrNY2SQhQHTjNRzH0a';
+    // personnes/id/.json
+    let url3 = url+'personnes/'+id+'/.json';
+    axios.delete(url3).then(function (response) {
+      console.log(response.data);
+      
+    });
+};
+</script>

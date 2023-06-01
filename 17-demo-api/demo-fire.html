@@ -1,0 +1,18 @@
+<button id="btnSave">GO</button>
+<script>
+document.getElementById('btnSave').onclick = async() =>{
+    let p = {prenom:'John',nom:'DOE'}
+    let url = 'https://eni-demo-nantes-default-rtdb.europe-west1.firebasedatabase.app/';
+    let url2 = url+'personnes.json';
+    fetch(url2, {
+        mode: "no-cors", // no-cors, *cors, same-origin
+    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: "omit", // include, *same-origin, omit
+    method: "POST", 
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(p), // body data type must match "Content-Type" header
+  }).then(response => response.json()).then(data => {console.log(data);})
+}
+</script>

@@ -41,9 +41,27 @@
         /* margin-top:20px;
         margin-left:-126px; */
       }
-      .my-blue{color:#07a;}
+      .my-blue {
+        color: #07a;
+      }
+      .my-select {
+        background-color: #f8d7da;
+      }
       .custom-tooltip {
         --bs-tooltip-bg: var(--bs-success);
+      }
+      .bg-gris2 {
+        background-color: #f2f2f2;
+      }
+      aside a {
+        color: black;
+        text-decoration: none;
+      }
+      aside a:hover {
+        color: #444;
+      }
+      aside div:hover {
+        background-color: #cfe2ff;
       }
     </style>
   </head>
@@ -97,162 +115,231 @@
         <h1>Le cours</h1>
       </div>
     </section>
-    <section>
-      <div class="container px-4 pt-3">
-        <!-- bloque -->
-        <h2>Ecrire dans une balise</h2>
-        Le sélecteur avec l'attribut innerHTML permet d'écrire dans une balise
-        <div class="row">
-          <div class="col-10">
-            <pre>
+
+    <div class="container pt-3">
+      <div class="row">
+        <aside class="col-3">
+          <div class="border-bottom bg-gris2 p-2">
+            <strong>Mon premier Code Javascript</strong>
+            <p><small>Lecture et traitement des données</small></p>
+          </div>
+          <a href="">
+            <div class="border-bottom p-2 my-select">
+              <strong>Modifier LE CSS</strong>
+              <p><small>Changer le CSS avec JavaScript</small></p>
+            </div>
+          </a>
+        </aside>
+        <div class="col-9">
+          <!-- bloque 10  -->
+          <!-- bloque -->
+
+          <h2>Ecrire dans une balise</h2>
+          Le sélecteur avec l'attribut innerHTML permet d'écrire dans une balise
+          <div class="row">
+            <div class="col-11">
+              <pre>
 <code class="language-html">&lt;div id=&quot;demo&quot;&gt;hello&lt;/div&gt;  
+
 &lt;script&gt; 
   document.getElementById('demo').innerHTML='bonjour'; 
 &lt;/script&gt;</code>
-    </pre>
-          </div>
+</pre>
+            </div>
 
-          <div class="col-2">
-            <button
-              class="ml-n20 btn btn-outline-secondary myCopy"
-              class="btn btn-secondary"
-              data-bs-toggle="tooltip"
-              data-bs-trigger="click"
-              data-bs-placement="top"
-              title="Copie ok !"
-              id="myTooltip"
-            >
-              <i class="fa-solid fa-copy"></i> copier
-            </button>
+            <div class="col-1">
+              <button
+                class="ml-n20 btn btn-outline-secondary myCopy"
+                class="btn btn-secondary"
+                data-bs-toggle="tooltip"
+                data-bs-trigger="click"
+                data-bs-placement="top"
+                title="Copie ok !"
+                id="myTooltip"
+              >
+                <i class="fa-solid fa-copy"></i> copier
+              </button>
+            </div>
           </div>
-        </div>
-        <i class="my-blue ms-5 fa-solid fa-arrow-down fa-2xl"></i>
-        <div class="col-10">
-          <pre>
-<code class="language-html">&lt;div id=&quot;demo&quot;&gt;bonjour&lt;/div&gt;</code></pre>
-<hr class="mt-5">        
-</div>
-
-        <!-- bloque -->
-        <!-- bloque -->
-        <h2 class="mt-5">Lire le contenu d'une balise</h2>
-        Le sélecteur avec l'attribut innerHTML permet d'écrire dans une balise
-        <div class="row">
-          <div class="col-10">
+          <i class="my-blue ms-5 fa-solid fa-arrow-down fa-2xl"></i>
+          <div class="col-11">
             <pre>
+<code class="language-html">&lt;div id=&quot;demo&quot;&gt;bonjour&lt;/div&gt;</code></pre>
+            <hr class="mt-5" />
+          </div>
+
+          <!-- bloque -->
+          <!-- bloque -->
+          <h2 class="mt-5">Lire le contenu d'une balise</h2>
+          Le sélecteur avec l'attribut innerHTML permet d'écrire dans une balise
+          <div class="row">
+            <div class="col-11">
+              <pre>
 <code class="language-html">&lt;div id=&quot;demo&quot;&gt;hello&lt;/div&gt;  
+
 &lt;script&gt; 
   let info = document.getElementById('demo').innerHTML;
   console.log(info); 
 &lt;/script&gt;</code>
-    </pre>
-          </div>
+</pre>
+            </div>
 
-          <div class="col-2">
-            <button
-              class="ml-n20 btn btn-outline-secondary myCopy"
-              class="btn btn-secondary"
-              data-bs-toggle="tooltip"
-              data-bs-trigger="click"
-              data-bs-placement="top"
-              title="Copie ok !"
-              id="myTooltip"
-            >
-              <i class="fa-solid fa-copy"></i> copier
-            </button>
-          
-          </div>  
-        </div>
-        <div class="col-10">
-          <hr class="mt-5"> 
-        </div>
-        <!-- bloque -->
-        <!-- bloque -->
-        <h2 class="mt-5">Le trigger</h2>
-       Le bouton permet de demander un traitement
-        <div class="row">
-          <div class="col-10">
-            <pre>
-<code class="language-html">&lt;div onclick=&quot;afficher()&quot;&gt;GO&lt;/div&gt;  
+            <div class="col-1">
+              <button
+                class="ml-n20 btn btn-outline-secondary myCopy"
+                class="btn btn-secondary"
+                data-bs-toggle="tooltip"
+                data-bs-trigger="click"
+                data-bs-placement="top"
+                title="Copie ok !"
+                id="myTooltip"
+              >
+                <i class="fa-solid fa-copy"></i> copier
+              </button>
+            </div>
+          </div>
+          <div class="col-11">
+            <hr class="mt-5" />
+          </div>
+          <!-- bloque -->
+          <!-- bloque -->
+          <h2 class="mt-5">Le trigger</h2>
+          Le bouton permet de demander un traitement
+          <div class="row">
+            <div class="col-11">
+              <pre>
+<code class="language-html">&lt;button onclick=&quot;afficher()&quot;&gt;GO&lt;/button&gt;  
+
 &lt;script&gt; 
   function afficher(){
     console.log('abc');
   }
 &lt;/script&gt;</code>
-    </pre>
-          </div>
+</pre>
+            </div>
 
-          <div class="col-2">
-            <button
-              class="ml-n20 btn btn-outline-secondary myCopy"
-              class="btn btn-secondary"
-              data-bs-toggle="tooltip"
-              data-bs-trigger="click"
-              data-bs-placement="top"
-              title="Copie ok !"
-              id="myTooltip"
-            >
-              <i class="fa-solid fa-copy"></i> copier
-            </button>
-          
-          </div>  
-        </div>
-        <div class="col-10">
-          <hr class="mt-5"> 
-        </div>
-        <!-- bloque -->
-       La fonction <strong>alert</strong> n'est pas recommandée.<br>
-       En effet il est possible  d'oublier de l'enlever lors de la mise en production.<br>
-       De plus l'action est bloquante. 
-        <div class="row">
-          <div class="col-10">
-            <pre>
-<code class="language-html">&lt;div onclick=&quot;afficher()&quot;&gt;GO&lt;/div&gt;  
+            <div class="col-1">
+              <button
+                class="ml-n20 btn btn-outline-secondary myCopy"
+                class="btn btn-secondary"
+                data-bs-toggle="tooltip"
+                data-bs-trigger="click"
+                data-bs-placement="top"
+                title="Copie ok !"
+                id="myTooltip"
+              >
+                <i class="fa-solid fa-copy"></i> copier
+              </button>
+            </div>
+          </div>
+          <div class="col-11">
+            <hr class="mt-5" />
+          </div>
+          <!-- bloque -->
+          La fonction <strong>alert</strong> n'est pas recommandée.<br />
+          En effet il est possible d'oublier de l'enlever lors de la mise en
+          production.<br />
+          De plus l'action est bloquante.
+          <div class="row">
+            <div class="col-11">
+              <pre>
+<code class="language-html">&lt;button onclick=&quot;afficher()&quot;&gt;GO&lt;/button&gt;  
+
 &lt;script&gt; 
   function afficher(){
     alert('abc');
   }
 &lt;/script&gt;</code>
-    </pre>
-          </div>
+</pre>
+            </div>
 
-          <div class="col-2">
-            <button
-              class="ml-n20 btn btn-outline-secondary myCopy"
-              class="btn btn-secondary"
-              data-bs-toggle="tooltip"
-              data-bs-trigger="click"
-              data-bs-placement="top"
-              title="Copie ok !"
-              id="myTooltip"
-            >
-              <i class="fa-solid fa-copy"></i> copier
-            </button>
-          
-          </div>  
-        </div>
-        <div class="col-10">
-          <hr class="mt-5"> 
-        </div>
-        <!-- bloque -->
-        <!-- bloque -->
-        <h2 class="mt-5">Le Champ de saisie</h2>
-       Le champ <strong>input</strong> permet de d'écrire des chaîne de caractère
-        <div class="row">
+            <div class="col-1">
+              <button
+                class="ml-n20 btn btn-outline-secondary myCopy"
+                class="btn btn-secondary"
+                data-bs-toggle="tooltip"
+                data-bs-trigger="click"
+                data-bs-placement="top"
+                title="Copie ok !"
+                id="myTooltip"
+              >
+                <i class="fa-solid fa-copy"></i> copier
+              </button>
+            </div>
+          </div>
           <div class="col-10">
-            <pre>
-<code class="language-html">&lt;input id=&quot;info&quot;&gt;</code>
-    </pre>
+            <hr class="mt-5" />
           </div>
+          <!-- bloque -->
+          <!-- bloque -->
+          <h2 class="mt-5">Le Champ de saisie</h2>
+          Le champ <strong>input</strong> permet de d'écrire des chaîne de
+          caractère
+          <div class="row">
+            <div class="col-11">
+              <pre>
+<code class="language-html">&lt;input id=&quot;info&quot;&gt;</code>
+</pre>
+            </div>
+            <span class="me-1">Lecture du champ de saisie</span>
+            <div class="col-11">
+              <pre>
+<code class="language-javascript">let texte = document.getElementById('info').value;</code>
+</pre>
+            </div>
+            <span class="me-1">Vider le champ input</span>
+            <div class="col-11">
+              <pre>
+<code class="language-javascript">document.getElementById('info').value='';</code>
+</pre>
+            </div>
+          </div>
+          <div class="col-10">
+            <hr class="mt-5" />
+          </div>
+          <!-- bloque -->
+<!-- bloque -->
+<h2>Création d'une application qui met les mots en majuscule</h2>
+<div class="row">
+  <div class="col-11">
+    <pre>
+<code class="language-html">&lt;div id=&quot;demo&quot;&gt;hello&lt;/div&gt;
+&lt;input id=&quot;mot&quot;&gt;
+&lt;button onclick=&quot;afficher()&quot;&gt;GO&lt;/button&gt;  
 
-          
+&lt;script&gt; 
+  function afficher(){
+    let texte = document.getElementById('info').value;
+    texte= texte.toUpperCase();
+    document.getElementById('demo').innerHTML = texte;
+  }
+&lt;/script&gt;</code>
+</pre>
+  </div>
+
+  <div class="col-1">
+    <button
+      class="ml-n20 btn btn-outline-secondary myCopy"
+      class="btn btn-secondary"
+      data-bs-toggle="tooltip"
+      data-bs-trigger="click"
+      data-bs-placement="top"
+      title="Copie ok !"
+      id="myTooltip"
+    >
+      <i class="fa-solid fa-copy"></i> copier
+    </button>
+  </div>
+</div>
+<div class="col-10">
+  <hr class="mt-5" />
+</div>
+<!-- bloque -->
+          <!-- bloque 10  -->
         </div>
-        <div class="col-10">
-          <hr class="mt-5"> 
-        </div>
-        <!-- bloque -->
       </div>
-    </section>
+    </div>
+
     <!-- <script src="./highlight/highlight.min.js"></script> -->
     <script src="./prism/prism.min.js"></script>
     <script
