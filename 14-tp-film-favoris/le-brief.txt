@@ -1,0 +1,10 @@
+TP 8
+http://www.omdbapi.com/?apikey=abc&t=star wars
+remplacer t par s
+pour avoir une liste / tableau de film
+s=...
+http://www.omdbapi.com/?apikey=abc&s=star wars
+
+Afficher la liste des films
+Ajouter les films dans la liste de favoris
+Enlever le film de la liste de recherche

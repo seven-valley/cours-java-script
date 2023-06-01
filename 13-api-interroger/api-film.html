@@ -1,0 +1,18 @@
+<input id="film">
+<button id="btnSearch">Recherche</button>
+<img src="" alt="">
+
+<script>
+    document.getElementById('btnSearch').onclick= ()=>{
+        let film = document.getElementById('film').value;
+        document.getElementById('film').value='';
+        let key = 'efdc2275';
+       let url ='http://www.omdbapi.com/?apikey='+key+'&t='+film
+        fetch(url)
+        .then(response => response.json())
+        .then(data=>{ 
+            document.querySelector('img').src=data.Poster;
+            console.log(data) 
+        });
+    }
+</script>
