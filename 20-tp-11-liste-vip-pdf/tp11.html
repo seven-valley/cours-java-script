@@ -1,0 +1,23 @@
+<!-- <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script> -->
+<button onclick="goPDF()">GO</button>
+<div id="canvas_container">
+    <canvas id="pdf_renderer"></canvas>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+window.jsPDF= window.jspdf.jsPDF;   
+const goPDF=()=>{
+    console.log('abc');
+    let doc = new jsPDF();
+    //doc.addFont('OpenSans-Regular.ttf','OpenSans','normal');
+    //doc.setFont('OpenSans');
+    //x =1cm
+    //y 1cm
+    doc.text('Hello world!', 100, 10);
+    doc.setFillColor(201,201,201);
+    doc.rect(20,100,100,30,'F');
+    doc.save('a4.pdf');
+    };    
+ 
+
+</script>

@@ -1,0 +1,18 @@
+TP12
+
+Créer 3 Class
+Une personne : id nom prenom
+token ou timstamp
+
+Une equipe 
+tableau de personnes
+nom d'Equipe
+
+Une entreprise
+un tableau d'equipe
+un tableau de personnes (tous les employés)
+
+Ajouter Equipe ...
+Drag and drop une personne de la liqte des employés
+Vers une equipe
+
