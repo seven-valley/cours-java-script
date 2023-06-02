@@ -1,0 +1,8 @@
+TP 11
+Ajouter une Font : Open Sans
+mettre différentes tailles de polices
+Ajouter un logo (image)
+Afficher la liste avec effet pyjama
+
+Option :
+Ajouter de l'html + balises html +image html
